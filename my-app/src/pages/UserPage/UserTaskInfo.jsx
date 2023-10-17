@@ -106,7 +106,7 @@ export default function UserTaskInfo() {
             )
             setBoardUsers(response.data.user)
         } catch {
-            console.log("Error:", error);
+            // console.log("Error:", error);
         }
     }
 
@@ -114,6 +114,30 @@ export default function UserTaskInfo() {
         BoardUsers()
     }, [])
 
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+    useEffect(() => {
+        axios.get('your-api-endpoint')
+            .then(response => {
+                // Handle the successful response
+                setData(response.data);
+            })
+            .catch(error => {
+                if (error.response) {
+                    // The request was made, but the server responded with a non-2xx status code
+                    console.log('Error response status:', error.response.status);
+                    console.log('Error response data:', error.response.data);
+                } else if (error.request) {
+                    // The request was made, but no response was received
+                    console.log('No response received:', error.request);
+                } else {
+                    // Something happened in setting up the request that triggered an error
+                    console.error('Request setup error:', error.message);
+                }
+
+                setError(error); // You can update the component state to handle errors
+            });
+    }, []);
 
     return (
         <>

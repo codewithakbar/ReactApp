@@ -149,7 +149,7 @@ export default function TaskInfo() {
             )
             setBoardUsers(response.data.user)
         } catch {
-            console.log("Error:" , error);
+            // console.log("Error:" , error);
         }
     }
 
