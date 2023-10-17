@@ -1,0 +1,29 @@
+.canelModal {
+    padding: 4px 23px;
+    margin-left: 10px;
+    background-color: #b4b7bb25;
+    color: #000000;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.saveModal {
+    padding: 6px 26px;
+    background-color: #1976d2;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.modalIn {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid black;
+    margin: 15px 0px;
+    font-size: 17px;
+}

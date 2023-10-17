@@ -1,0 +1,11 @@
+.userNav {
+    width: 50vw;
+    margin:  0 auto;
+    border-top: 1px solid #FF8B36;
+    padding-top: 10px;
+}
+
+.userNav h5 {
+    font-size: 19px;
+    color: #FF8B36;
+}

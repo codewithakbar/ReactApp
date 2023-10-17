@@ -1,0 +1,258 @@
+.LoginGlav {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: url(./../../assets/vod.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.LoginCard {
+    width: 20vw;
+    height: 30vw;
+    border: .2vw solid rgba(255, 68, 0, 0.258);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1vw;
+    border-radius: 2vw;
+    gap: 2vw;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.LoginTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LoginTitle h3 {
+    margin-top: -1vw;
+    padding-left: 1vw;
+    font-size: 1.5vw;
+    color: rgba(255, 68, 0, 0.581);
+}
+
+.Logo {
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+.LoginUp {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.Kirish {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Kirish button {
+    font-size:1vw ;
+    outline: none;
+    cursor: pointer;
+    background: rgba(255, 68, 0, 0.456);
+    color: white;
+    border: none;
+    padding: .8vw 6vw;
+    border-radius: 2vw;
+    transition: .3s all ease;
+}
+
+.Kirish button:hover {
+    outline: none;
+    background: rgb(255, 68, 0);
+    color: white;
+    border: none;
+    padding: .8vw 6vw;
+    border-radius: 2vw;
+}
+
+.Email {
+    display: flex;
+    flex-direction: column;
+    gap: .7vw;
+}
+
+.Password {
+    display: flex;
+    flex-direction: column;
+    gap: .7vw;
+}
+
+.Email label {
+    color: rgba(255, 68, 0, 0.54);
+    font-size: 1vw;
+}
+
+.Password label {
+    color: rgba(255, 68, 0, 0.54);
+    font-size: 1vw;
+}
+
+.Email input {
+    background: inherit;
+    outline: none;
+    border-radius: .5vw;
+    width: 17.6vw;
+    height: 1.8vw;
+    padding: .3vw;
+    border:.1vw solid rgba(255, 68, 0, 0.54);
+    color: grey;
+    font-size: .7vw;
+}
+
+.Password input {
+    background: inherit;
+    outline: none;
+    border-radius: .5vw;
+    font-size: .7vw;
+    width: 17.6vw;
+    height: 1.8vw;
+    padding: .3vw;
+    border:.1vw solid rgba(255, 68, 0, 0.54);
+    color: grey;
+}
+
+@media (max-width:900px) {
+    .LoginGlav {
+        width: 100vw;
+        height: auto;
+        padding:10vw 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: sans-serif;
+        background-image: url(./../../assets/vod.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    
+    .LoginCard {
+        width: 90%;
+        height: auto;
+        border: .2vw solid rgba(255, 68, 0, 0.258);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15vw 1vw;
+        border-radius: 2vw;
+        gap: 15vw;
+        background-color: rgba(255, 255, 255, 0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+    
+    .LoginTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .LoginTitle h3 {
+        margin-top: -5vw;
+        padding-left: 3vw;
+        font-size: 6vw;
+        color: rgba(255, 68, 0, 0.581);
+    }
+    
+    .Logo {
+        width: 40vw;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .LoginUp {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10.5vw;
+    }
+    
+    .Kirish {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .Kirish button {
+        font-size:5vw ;
+        outline: none;
+        cursor: pointer;
+        background: rgba(255, 68, 0, 0.456);
+        color: white;
+        border: none;
+        width: 56vw;
+        height: 10vw;
+        border-radius: 10vw;
+        transition: .3s all ease;
+    }
+    
+    .Kirish button:hover {
+        outline: none;
+        background: rgb(255, 68, 0);
+        color: white;
+        border: none;
+        padding: .8vw 6vw;
+        border-radius: 2vw;
+    }
+    
+    .Email {
+        display: flex;
+        flex-direction: column;
+        gap: .7vw;
+    }
+    
+    .Password {
+        display: flex;
+        flex-direction: column;
+        gap: .7vw;
+    }
+    
+    .Email label {
+        color: rgba(255, 68, 0, 0.54);
+        font-size: 6vw;
+    }
+    
+    .Password label {
+        color: rgba(255, 68, 0, 0.54);
+        font-size: 6vw;
+    }
+    
+    .Email input {
+        font-size: 4vw;
+        background: inherit;
+        outline: none;
+        border-radius: 5vw;
+        width: 70.6vw;
+        height: 10.8vw;
+        padding: 3vw;
+        border:.1vw solid rgba(128, 128, 128, 0.436);
+        color: grey;
+    }
+    
+    .Password input {
+        font-size: 4vw;
+        background: inherit;
+        outline: none;
+        border-radius: 5vw;
+        width: 70.6vw;
+        height: 10.8vw;
+        padding: 3vw;
+        border:.1vw solid rgba(128, 128, 128, 0.436);
+        color: grey;
+    }
+}

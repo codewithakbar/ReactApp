@@ -1,0 +1,521 @@
+.ProfileNav {
+  width: 80vw;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ProfileNav .profilNavLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.statusTaskBtn {
+  width: 120px;
+  height: 44px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #828282;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.userAdd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.userAdd__users {
+  width: auto;
+  height: 50px;
+  border-radius: 4px;
+  display: flex;
+  gap: 10px;
+}
+
+.userAdd__users img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.userAdd__userAdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userAdd__userAdd button {
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  background-color: #2f80ed;
+  color: white;
+  border-radius: 4px;
+}
+
+.profilNavRight {
+  display: flex;
+  align-items: center;
+}
+
+.profilNavRight button {
+  padding: 0px 20px;
+  height: 5vh;
+  color: #828282;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profilNavRight button:hover {
+  color: black;
+  background-color: #1111113b;
+}
+
+.tasks {
+  width: 80vw;
+  margin: 30px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.taskCard {
+  width: 13vw;
+  height: auto;
+  border-radius: 10px;
+  padding: 5px;
+  -webkit-box-shadow: 0px 0px 30px -7px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 30px -7px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 30px -7px rgba(34, 60, 80, 0.2);
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tasksNav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+}
+
+.taskData {
+  width: 100%;
+}
+
+.taskData p {
+  font-weight: 600;
+  width: 80%;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+.taskSet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskSet button {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.taskInfoCard {
+  margin: 5px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.taskInfoCard:hover {
+  transition: 0.3s;
+  box-shadow: 2px 2px 10px 1px rgba(95, 95, 95, 0.267);
+  cursor: pointer;
+}
+
+
+.taskInfoCard p {
+  width: 100%;
+  font-size: 18px;
+  word-wrap: break-word;
+}
+
+.taskInfoCard__usersINfo {
+  display: flex;
+  gap: 5px;
+}
+
+.taskInfoCard__usersINfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+}
+
+.addMiniDesc {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  transition: 0.2s all ease-in;
+}
+
+.addMiniDesc:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.addMiniDesc input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.addMiniDesc button {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TascInfMOdule {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000061;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.none1 {
+  display: none;
+}
+
+.taskSetting {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  position: absolute;
+  top: 50px;
+  right: -100px;
+  background-color: #ffffff;
+}
+
+.taskSetting button {
+  height: 35px;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  background-color: transparent;
+  color: #828282;
+  font-weight: 600;
+}
+.TascInfMOduleCard
+.taskSetting #ts1 {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.taskSetting #ts2 {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.taskSetting button:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+
+.none1 {
+  display: none;
+}
+
+.CloseBox {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.close {
+  border: none;
+  outline: none;
+  background-color: rgba(255, 68, 0, 0.645);
+  width: 50px;
+  height: 35px;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+}
+
+.TaskInfBoxLeftGalvLable {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.GlavLableTitle {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.GlavLableTitle button {
+  outline: none;
+  border: none;
+  background: none;
+  color: #bdbdbd;
+  font-size: 18px;
+}
+
+.TaskInfBox 
+.GlavLableTitle h1 {
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.TaskInfBoxLeftGalvLable label {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+  color: #bdbdbd;
+  font-weight: 600;
+}
+
+.TaskInfBoxLeftGalvLable label input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+.TaskInfLabel {
+  display: flex;
+  align-items: center;
+}
+
+.TaskInfLabel label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.TaskInfLabel input {
+  border: none;
+  outline: none;
+  background: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.Description {
+  color: #828282;
+}
+
+.TaskInfoInpute {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.TaskInfFileBtn p {
+  display: block;
+}
+
+.TaskInfFile {
+  display: flex;
+}
+
+.TaskInfFileMiniBox {
+  width: 100px;
+  height: 60px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+.TaskInfFileMiniBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.TaskInfoLabelBox {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.btnLabel button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  outline: none;
+  background: inherit;
+  padding: 5px 20px;
+  border-radius: 10px;
+  color: grey;
+  border: 1px solid grey;
+}
+
+.TascInfMOduleCard {
+  width: auto;
+  height: auto;
+  background: white;
+  padding: 1vw;
+  border-radius: 1vw;
+  -webkit-box-shadow: 0px 0px 33px 1px rgba(73, 82, 90, 0.2);
+  -moz-box-shadow: 0px 0px 33px 1px rgba(112, 115, 117, 0.2);
+  box-shadow: 0px 0px 33px 1px rgba(92, 94, 96, 0.2);
+}
+
+.dropMenu {
+  border: 1px solid #e0e0e0;
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.dropBtn {
+  padding: 10px 10px;
+  cursor: pointer;
+  color: #828282;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.dropBtn:hover {
+  background-color: #f2f2f2;
+}
+
+.hello {
+  height: 400px;
+}
+
+.GlavBtn {
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropOnBtn {
+    border: none;
+    cursor: pointer;
+    border: none;
+}
+
+.dropMenu1 {
+  background-color: white;
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+}
+
+.dropMenu1 .tskSelectorTitle {
+  margin-bottom: 15px;
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dropMenu1 .tskSelectorTitle h3 {
+  font-size: 18px;
+}
+
+.dropMenu1 .tskSelectorTitle p {
+  font-weight: 600;
+  color: #828282;
+}
+
+.dropMenu1 .dropBtn {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.red {
+  background-color: #ffe2de;
+}
+
+.green {
+  background-color: #e2f7df;
+}
+
+.TaskInfFile {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.TaskInfFileT {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.TaskInfFileT p {
+  color: #bdbdbd;
+  font-size: 10.4px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.TaskInfFileBtnBox label {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 10px;
+  border-radius: 10px;
+  font-family: sans-serif;
+  font-weight: 600;
+  padding: 7px 10px;
+  border: 1px solid #BDBDBD;
+}
