@@ -23,7 +23,6 @@ function App() {
   }, [token])
 
   const is_admin = localStorage.getItem('is_admin')
-  console.log(is_admin);
 
   // Store a hashed value of is_admin
   function hash(value) {

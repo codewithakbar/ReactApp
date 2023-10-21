@@ -3,11 +3,14 @@
   flex-direction: column-reverse;
   gap: 1vw;
   font-family: sans-serif;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .chat-box {
   width: 100%;
-  height: 7vw;
+  height: 20vw;
   overflow-y: auto;
 }
 
