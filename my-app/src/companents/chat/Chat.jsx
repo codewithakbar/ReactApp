@@ -4,7 +4,7 @@ import img from './../../assets/vod.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-function Chat({ card }) {
+function Chat({ card , handleOpen }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
@@ -24,6 +24,7 @@ function Chat({ card }) {
       file: selectedFile,
     };
 
+    // Add the new message to the state
     setMessages([...messages, newMessageObj]);
     setNewMessage('');
     setSelectedFile(null);
@@ -68,7 +69,7 @@ function Chat({ card }) {
 
   const messageValue = useRef()
   const fileValue = useRef()
-  const {boardId} = useParams()
+  const { boardId } = useParams()
 
   const postCommit = async () => {
     try {
@@ -76,12 +77,12 @@ function Chat({ card }) {
       formData.append('text', messageValue.current.value);
       formData.append('card', card.id);
       formData.append('user', userID);
-  
+
       // Faylni tekshirish
       if (fileValue.current.files.length > 0) {
         formData.append('file', fileValue.current.files[0]); // Faylni olish
       }
-    
+
       await axios.post(
         `https://manager.zafarr.uz/routers/comments/card/post/${card.id}/`,
         formData,
@@ -92,23 +93,47 @@ function Chat({ card }) {
           },
         }
       );
-      window.location.reload();
+
+      // After successful submission, add the new message to the state
+      const newMessageObj = {
+        text: messageValue.current.value,
+        file: fileValue.current.files[0],
+        user: [
+          {
+            profile_image:  userInfos[0].profile_image ,
+          }
+        ],
+      };
+
+      setMessages([...messages, newMessageObj]);
+      messageValue.current.value = ''; // Clear the input field
+      fileValue.current.value = null; // Clear the file input field
+      handleOpen()
     } catch (error) {
       console.error('Error:', error);
     }
   };
-  
-  
-    // getUsername 
-    const [userInfos , setUserInfos] = useState([])
-    const getUserInfo = async () => {
-        const response = await axios.get(`https://manager.zafarr.uz/routers/userprofile/${userID}/`)
-        setUserInfos(response.data)
-    }
 
-    useEffect(() => {
-      getUserInfo()
-    }, [])
+  // getUsername 
+  const [userInfos, setUserInfos] = useState([])
+  const getUserInfo = async () => {
+    try {
+      const response = await axios.get(`https://manager.zafarr.uz/routers/userprofile/${userID}/`, {
+        headers: {
+          'Content-Type': 'application/json',
+          "Authorization": `Token ${tokenw}`,
+        },
+      });
+      setUserInfos(response.data)
+      console.log(response.data);
+    } catch {
+      // console.error('Foydalanuvchi ma\'lumotlarini olishda xatolik:', error);
+    }
+  }
+
+  useEffect(() => {
+    getUserInfo()
+  }, [])
 
 
   return (
@@ -117,13 +142,17 @@ function Chat({ card }) {
         {messages.map((message, index) => (
           <div key={index} className="message">
             <div className="user-name">
-              <img src={message.user[0].profile_image} alt="img" />
+              {message.user && message.user[0] && (
+                <img src={message.user[0].profile_image} alt="img" />
+              )}
               <div className="TextComment">
-                <p>{message.user[0].first_name} {message.user[0].last_name}</p>
+                {message.user && message.user[0] && (
+                  <p>{message.user[0].first_name} {message.user[0].last_name}</p>
+                )}
                 <p id='text'>{message.text}</p>
                 {message.file && (
                   <div>
-                    <a href={message.file} target="_blank" rel="noopener noreferrer">{'Filne Korish'}</a>
+                    <a href={message.file} target="_blank" rel="noopener noreferrer">{'Filene Korish'}</a>
                   </div>
                 )}
               </div>

@@ -9,6 +9,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+
     const submit = async (e) => {
         e.preventDefault();
 
@@ -25,7 +26,7 @@ export default function Login() {
                 const is_admin = response.data.is_admin
                 localStorage.setItem('accessToken', token);
                 localStorage.setItem('userID', userID);
-                localStorage.setItem('is_admin' , is_admin) 
+                localStorage.setItem('is_admin', is_admin)
                 navigate('/');
             } else {
                 console.error('Login failed: Invalid response format');

@@ -16,14 +16,15 @@ const style = {
   p: 4,
 };
 
-export default function ChatModal({main}) {
-  const [open, setOpen] = React.useState(false);
+export default function ChatModal({open, setOpen , main }) {
+  // Modal is open 
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <Button style={{minWidth: 'auto'}} onClick={handleOpen}>Open Commit</Button>
+      <Button style={{ minWidth: 'auto' }} onClick={handleOpen}>Comment</Button>
       <Modal
         open={open}
         onClose={handleClose}
