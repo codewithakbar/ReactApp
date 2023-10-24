@@ -4,7 +4,7 @@ import img from './../../assets/vod.png';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
-function Chat({ card , handleOpen }) {
+function Chat({ card }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const [selectedFile, setSelectedFile] = useState(null);
@@ -108,7 +108,6 @@ function Chat({ card , handleOpen }) {
       setMessages([...messages, newMessageObj]);
       messageValue.current.value = ''; // Clear the input field
       fileValue.current.value = null; // Clear the file input field
-      handleOpen()
     } catch (error) {
       console.error('Error:', error);
     }
@@ -166,6 +165,7 @@ function Chat({ card , handleOpen }) {
         <input className='HabarFile' ref={fileValue} type="file" onChange={handleFileChange} />
         <button onClick={() => postCommit()}>Yuborish</button>
       </div>
+      <button>X</button>
     </div>
   );
 }

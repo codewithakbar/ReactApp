@@ -16,7 +16,7 @@ import { Dropdown } from '@mui/base/Dropdown';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Chat from '../../companents/chat/Chat'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Card from './Card'
 import List from './List'
@@ -235,6 +235,10 @@ export default function TaskInfo() {
                     </div>
                 </div>
             </div >
+
+            <Link to={'/Modal'}>
+                <button>Click ME</button>
+            </Link>
         </>
     )
 }

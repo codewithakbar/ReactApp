@@ -10,6 +10,7 @@ import UserPage from './pages/UserPage/UserPage'
 import { useEffect } from 'react';
 import UserTaskInfo from './pages/UserPage/UserTaskInfo'
 import UserCards from './pages/UserPage/UserCards';
+import ModalCss from './companents/Modal/Modal';
 
 function App() {
 
@@ -61,6 +62,7 @@ function App() {
               <Route path='/Profil' element={<ProfelInfo />} />
               <Route path='/user' element={<User />} />
               <Route path='/TaskInfo/:id' element={<TaskInfo />} />
+              <Route path='/Modal' element={<ModalCss/>} />
             </>
           ) : (
             <>

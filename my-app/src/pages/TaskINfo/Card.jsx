@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import Chat from "../../companents/chat/Chat"
 import { Modal } from '@mui/base/Modal';
@@ -20,39 +20,50 @@ export default function Card({ ids, closeRef }) {
     }, [])
 
     const [open, setOpen] = useState(false);
+    const modalRef = useRef()
 
-    const handleOpen = () => {
-        window.location.reload()
-        setOpen(true)
-    }
 
-    const [openModal , setOpenModal] = useState(false)
-    const handleOpenModal = () => {
-        setOpenModal(true);
-    }
-    const handleCloseModal = (e) => {
-        if (e.target === e.currentTarget) {
-            setOpenModal(false);
-        }
-    }
 
     return (
         <>
             {
                 cards.map(card => (
-                    <div className="taskInfoCard" key={card.id} onClick={handleOpenModal}>
+                    <div className="taskInfoCard" key={card.id}>
                         <button><AiOutlineDelete /></button>
                         <p>{card.title}</p>
                         <div className="taskInfoCard__usersINfo">
                             <img src="https://lh3.googleusercontent.com/a/AAcHTtebJ7FQXHDSt3g_H96uktTJuDJIcYFas4iuzt1iMGSV=s96-c" alt="" />
                             <img src="https://lh3.googleusercontent.com/a/AAcHTtebJ7FQXHDSt3g_H96uktTJuDJIcYFas4iuzt1iMGSV=s96-c" alt="" />
                         </div>
-                        <div className={openModal == true ? 'modalCom' : 'block'} onClick={handleCloseModal}>
+                        {/* <div ref={modalRef} className="block">
                             <div className="modalClose"></div>
                             <div className="modalMain">
-                                <Chat handleOpen={handleOpen} card={card} />
+                                <Chat card={card} />
                             </div>
+                        </div> */}
+                        <div className="ModalCss">
+            <div className="Modalcontainer">
+                <details>
+                    <summary>
+                        <div className="Modalbutton">
+                            Show me the modal
                         </div>
+                        <div className="details-modal-overlay"></div>
+                    </summary>
+                    <div className="details-modal">
+                        <div className="details-modal-close">
+                        </div>
+                        <div className="details-modal-title">
+                            <h1>My details modal</h1>
+                        </div>
+                        <div className="details-modal-content">
+                        <Chat card={card} />
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+ 
                         {/* <ChatModal open={open} setOpen={setOpen} main={ } /> */}
                     </div>
                 ))
