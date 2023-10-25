@@ -18,6 +18,11 @@ function Chat({ card }) {
     setSelectedFile(e.target.files[0]);
   };
 
+
+  //Refresh
+  
+
+
   const sendMessage = () => {
     const newMessageObj = {
       text: newMessage,
@@ -99,7 +104,7 @@ function Chat({ card }) {
         file: fileValue.current.files[0],
         user: [
           {
-            profile_image:  userInfos[0].profile_image ,
+            profile_image: userInfos[0].profile_image,
           }
         ],
       };
@@ -107,6 +112,7 @@ function Chat({ card }) {
       setMessages([...messages, newMessageObj]);
       messageValue.current.value = ''; // Clear the input field
       fileValue.current.value = null; // Clear the file input field
+      window.location.reload(Chat);
     } catch (error) {
       console.error('Error:', error);
     }
