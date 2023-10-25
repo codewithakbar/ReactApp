@@ -113,7 +113,7 @@ function Chat({ card }) {
       setMessages([...messages, newMessageObj]);
       messageValue.current.value = ''; // Clear the input field
       fileValue.current.value = null; // Clear the file input field
-      window.Chat.reload(false);
+      window.location.reload(Chat);
     } catch (error) {
       console.error('Error:', error);
     }
