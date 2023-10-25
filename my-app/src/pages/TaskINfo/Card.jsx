@@ -21,15 +21,25 @@ export default function Card({ ids, closeRef }) {
 
     const [open, setOpen] = useState(false);
     const modalRef = useRef()
+    const tokenw = localStorage.getItem('accessToken');
 
 
+    const deleteCard = async (cardID) => {
+        const response = await axios.delete(`https://manager.zafarr.uz/routers/card/${cardID}/`, {
+            headers: {
+                'Content-Type': 'application/json',
+                "Authorization": `Token ${tokenw}`,
+            },
+        })
+        getCard()
+    }
 
     return (
         <>
             {
                 cards.map(card => (
                     <div className="taskInfoCard" key={card.id}>
-                        <button><AiOutlineDelete /></button>
+                        <button onClick={() => deleteCard(card.id)}><AiOutlineDelete /></button>
                         <p>{card.title}</p>
                         <div className="taskInfoCard__usersINfo">
                             <img src="https://lh3.googleusercontent.com/a/AAcHTtebJ7FQXHDSt3g_H96uktTJuDJIcYFas4iuzt1iMGSV=s96-c" alt="" />
@@ -42,28 +52,28 @@ export default function Card({ ids, closeRef }) {
                             </div>
                         </div> */}
                         <div className="ModalCss">
-            <div className="Modalcontainer">
-                <details>
-                    <summary>
-                        <div className="Modalbutton">
-                            Show me the modal
+                            <div className="Modalcontainer">
+                                <details>
+                                    <summary>
+                                        <div className="Modalbutton">
+                                            Show me the modal
+                                        </div>
+                                        <div className="details-modal-overlay"></div>
+                                    </summary>
+                                    <div className="details-modal">
+                                        <div className="details-modal-close">
+                                        </div>
+                                        <div className="details-modal-title">
+                                            <h1>My details modal</h1>
+                                        </div>
+                                        <div className="details-modal-content">
+                                            <Chat card={card} />
+                                        </div>
+                                    </div>
+                                </details>
+                            </div>
                         </div>
-                        <div className="details-modal-overlay"></div>
-                    </summary>
-                    <div className="details-modal">
-                        <div className="details-modal-close">
-                        </div>
-                        <div className="details-modal-title">
-                            <h1>My details modal</h1>
-                        </div>
-                        <div className="details-modal-content">
-                        <Chat card={card} />
-                        </div>
-                    </div>
-                </details>
-            </div>
-        </div>
- 
+
                         {/* <ChatModal open={open} setOpen={setOpen} main={ } /> */}
                     </div>
                 ))

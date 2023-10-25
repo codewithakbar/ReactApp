@@ -44,8 +44,7 @@ function Chat({ card }) {
     // Fayl URL sini saqlang
     setFileUrl(serverFileUrl);
   };
-
-
+  
   const tokenw = localStorage.getItem('accessToken');
   const userID = localStorage.getItem('userID')
   const getCommet = async () => {
@@ -63,7 +62,7 @@ function Chat({ card }) {
 
   useEffect(() => {
     getCommet()
-  }, [])
+  }, [card])
 
   // add commit
 
@@ -104,7 +103,7 @@ function Chat({ card }) {
           }
         ],
       };
-
+      getCommet()
       setMessages([...messages, newMessageObj]);
       messageValue.current.value = ''; // Clear the input field
       fileValue.current.value = null; // Clear the file input field
@@ -133,6 +132,7 @@ function Chat({ card }) {
   useEffect(() => {
     getUserInfo()
   }, [])
+  
 
 
   return (
@@ -165,7 +165,6 @@ function Chat({ card }) {
         <input className='HabarFile' ref={fileValue} type="file" onChange={handleFileChange} />
         <button onClick={() => postCommit()}>Yuborish</button>
       </div>
-      <button>X</button>
     </div>
   );
 }
